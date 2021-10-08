@@ -1,0 +1,47 @@
+{
+    "name": "virtunus/translator",
+    "description": "Virtunus language detector",
+    "type": "laravel-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Md. Mahbub Rabbani",
+            "email": "mabhub.ruse@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Virtunus\\Translator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Virtunus\\Translator\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "google/cloud-translate": "^1.11"
+    },
+    "extra": {
+        "laravel" : {
+            "providers": [
+                "Virtunus\\Translator\\ServiceProvider"
+            ],
+            "aliases": {
+                "Translator": "Virtunus\\Translator\\Facades\\Translator"
+            }
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "doctrine/dbal": "^2.5",
+        "nunomaduro/phpinsights": "dev-master"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-f": "vendor/bin/phpunit --filter",
+        "test-w": "vendor\\bin\\phpunit",
+        "test-wf": "vendor\\bin\\phpunit --filter"
+    }
+}
