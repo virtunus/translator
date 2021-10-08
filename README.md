@@ -19,7 +19,7 @@ Add following code to the application's `composer.json` file
           ....
         {
             "type": "vcs",
-            "url": "https://github.com/virtunus/todo-api.git"
+            "url": "https://github.com/virtunus/translator.git"
         }
     ],
 Now run the follwing command to add this package to your project.
