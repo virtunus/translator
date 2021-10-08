@@ -11,7 +11,7 @@ use Virtunus\Translator\TranslateClientFake;
  * @method static void assertDetectedLanguageIsNot(string $lang)
  * @method static array detectLanguages(string $text, string $projectId = '', string $location = 'global')
  *
- * @see \Enzaime\DynamicLink\DynamicLink
+ * @see \Virtunus\Translator\TranslateClient
  */
 class Translator extends Facade
 {
