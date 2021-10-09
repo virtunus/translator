@@ -20,8 +20,8 @@ class TranslateClientFake
     public function detectLanguages(string $text, string $projectId = '', string $location = 'global'): array
     {
         $this->detectedLang = 'en';
-        
-        $confidence =  rand(.5, 1);
+
+        $confidence = rand(0, 10) / 10;
 
         return [
             "$confidence" => 'en',

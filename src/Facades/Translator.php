@@ -10,6 +10,7 @@ use Virtunus\Translator\TranslateClientFake;
  * @method static void assertDetectedLanguage(string $lang)
  * @method static void assertDetectedLanguageIsNot(string $lang)
  * @method static array detectLanguages(string $text, string $projectId = '', string $location = 'global')
+ * @method static \Google\Cloud\Translate\V3\TranslationServiceClient getClient()
  *
  * @see \Virtunus\Translator\TranslateClient
  */
