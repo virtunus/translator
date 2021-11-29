@@ -38,6 +38,10 @@ class Translator extends Facade
      */
     protected static function getFacadeAccessor()
     {
+        if (config('v-translator.enable_language_detection') == false) {
+            return TranslateClientFake::class;
+        }
+
         return TranslateClient::class;
     }
 }

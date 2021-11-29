@@ -1,7 +1,7 @@
 # Google Translate API 
 The sample code can be found:
 - [Raw php sample API](https://cloud.google.com/translate/docs/samples)
-- [Github repository](https://github.com/GoogleCloudPlatform/php-docs-samples/tree/8d25b48bfa2dbcd217e56ca7734b5d37ec29fb88/translate) 
+- [Github repository](https://github.com/GoogleCloudPlatform/php-docs-samples/tree/8d25b48bfa2dbcd217e56ca7734b5d37ec29fb88/translate)
 
 
 ## Description
@@ -68,3 +68,9 @@ Set the value of environment variables `GOOGLE_APPLICATION_CREDENTIALS` and `GOO
 ```
     composer test
 ```
+
+### Development Mode
+
+You should set the following environment variable to disable language detection.
+
+    ENABLE_LANGUAGE_DETECTION=false
