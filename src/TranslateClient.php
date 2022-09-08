@@ -1,7 +1,7 @@
 <?php
 
 namespace Virtunus\Translator;
-use Google\Cloud\Translate\V3\Gapic\TranslationServiceGapicClient;
+
 use Google\Cloud\Translate\V3\TranslationServiceClient;
 
 class TranslateClient
@@ -9,9 +9,9 @@ class TranslateClient
     /**
      * Get probable languages as key-value where key is the confidence and value is the language code
      *
-     * @param string $text
-     * @param string $projectId
-     * @param string $location
+     * @param  string  $text
+     * @param  string  $projectId
+     * @param  string  $location
      * @return array
      */
     public function detectLanguages(string $text, string $projectId = '', string $location = 'global'): array
@@ -30,14 +30,14 @@ class TranslateClient
                 $formattedParent,
                 [
                     'content' => $text,
-                    'mimeType' => $mimeType
+                    'mimeType' => $mimeType,
                 ]
             );
 
             // Display list of detected languages sorted by detection confidence.
             // The most probable language is first.
             foreach ($response->getLanguages() as $language) {
-                $langs[(string)$language->getConfidence()] = $language->getLanguageCode();
+                $langs[(string) $language->getConfidence()] = $language->getLanguageCode();
             }
         } finally {
             $translationServiceClient->close();
@@ -55,8 +55,8 @@ class TranslateClient
     {
         return new TranslationServiceClient([
             'credentialsConfig' => [
-                'keyFile' => config('v-translator.google_credentials')
-            ]
+                'keyFile' => config('v-translator.google_credentials'),
+            ],
         ]);
     }
 

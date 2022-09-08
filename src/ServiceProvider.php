@@ -23,9 +23,9 @@ class ServiceProvider extends SupportServiceProvider
      */
     public function register()
     {
-        $this->rootPath = realpath(__DIR__ . '/../');
+        $this->rootPath = realpath(__DIR__.'/../');
 
-        $this->mergeConfigFrom($this->rootPath . '/config/v-translator.php', self::NAMESPACE);
+        $this->mergeConfigFrom($this->rootPath.'/config/v-translator.php', self::NAMESPACE);
     }
 
     /**
@@ -45,11 +45,11 @@ class ServiceProvider extends SupportServiceProvider
     {
         Route::group($this->routeConfiguration(), function (): void {
             Route::group(['middleware' => 'api'], function (): void {
-                $this->loadRoutesFrom($this->rootPath . '/routes/api.php');
+                $this->loadRoutesFrom($this->rootPath.'/routes/api.php');
             });
 
             Route::group(['middleware' => 'web'], function (): void {
-                $this->loadRoutesFrom($this->rootPath . '/routes/web.php');
+                $this->loadRoutesFrom($this->rootPath.'/routes/web.php');
             });
         });
     }

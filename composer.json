@@ -34,14 +34,19 @@
         }
     },
     "require-dev": {
-        "orchestra/testbench": "^6.0",
-        "doctrine/dbal": "^2.5",
-        "nunomaduro/phpinsights": "dev-master"
+        "orchestra/testbench": "^6.0|^7.0",
+        "nunomaduro/phpinsights": "dev-master",
+        "laravel/pint": "^1.0"
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-f": "vendor/bin/phpunit --filter",
         "test-w": "vendor\\bin\\phpunit",
         "test-wf": "vendor\\bin\\phpunit --filter"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": false
+        }
     }
 }
