@@ -2,7 +2,6 @@
 
 namespace Virtunus\Translator;
 
-use Google\Cloud\Translate\V3\TranslationServiceClient;
 use PHPUnit\Framework\Assert as PHPUnit;
 
 class TranslateClientFake
@@ -12,9 +11,9 @@ class TranslateClientFake
     /**
      * Get probable languages as key-value where key is the confidence and value is the language code
      *
-     * @param string $text
-     * @param string $projectId
-     * @param string $location
+     * @param  string  $text
+     * @param  string  $projectId
+     * @param  string  $location
      * @return array
      */
     public function detectLanguages(string $text, string $projectId = '', string $location = 'global'): array
@@ -49,14 +48,13 @@ class TranslateClientFake
     }
 
     /**
-    * Assert if the detected language is the given lang.
-    *
-    * @param  int $count
-    * @return void
-    */
+     * Assert if the detected language is the given lang.
+     *
+     * @param  int  $count
+     * @return void
+     */
     public function assertDetectedLanguage(string $lang)
     {
-
         PHPUnit::assertSame(
             $lang,
             $this->detectedLang,
@@ -65,11 +63,11 @@ class TranslateClientFake
     }
 
     /**
-    * Assert if the detected language is not the given lang.
-    *
-    * @param  int $count
-    * @return void
-    */
+     * Assert if the detected language is not the given lang.
+     *
+     * @param  int  $count
+     * @return void
+     */
     public function assertDetectedLanguageIsNot(string $lang)
     {
         PHPUnit::assertNotSame(
