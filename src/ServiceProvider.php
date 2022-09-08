@@ -2,7 +2,6 @@
 
 namespace Virtunus\Translator;
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider as SupportServiceProvider;
 
 class ServiceProvider extends SupportServiceProvider
