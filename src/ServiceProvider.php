@@ -35,34 +35,5 @@ class ServiceProvider extends SupportServiceProvider
      */
     public function boot()
     {
-        // $this->loadRoutes();
-    }
-
-    /**
-     * Register the package routes.
-     */
-    private function loadRoutes(): void
-    {
-        Route::group($this->routeConfiguration(), function (): void {
-            Route::group(['middleware' => 'api'], function (): void {
-                $this->loadRoutesFrom($this->rootPath.'/routes/api.php');
-            });
-
-            Route::group(['middleware' => 'web'], function (): void {
-                $this->loadRoutesFrom($this->rootPath.'/routes/web.php');
-            });
-        });
-    }
-
-    /**
-     * Get the Telescope route group configuration array.
-     *
-     * @return array
-     */
-    private function routeConfiguration(): array
-    {
-        return [
-            'namespace' => 'Virtunus\Tips\Http\Controllers',
-        ];
     }
 }
