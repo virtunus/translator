@@ -4,7 +4,7 @@ namespace Virtunus\Translator;
 
 use PHPUnit\Framework\Assert as PHPUnit;
 
-class TranslateClientFake
+class FakeClient
 {
     protected string $detectedLang = '';
 

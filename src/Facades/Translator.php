@@ -4,7 +4,7 @@ namespace Virtunus\Translator\Facades;
 
 use Illuminate\Support\Facades\Facade;
 use Virtunus\Translator\TranslateClient;
-use Virtunus\Translator\TranslateClientFake;
+use Virtunus\Translator\FakeClient;
 
 /**
  * @method static void assertDetectedLanguage(string $lang)
@@ -24,7 +24,7 @@ class Translator extends Facade
      */
     public static function fake($eventsToFake = [])
     {
-        static::swap($fake = new TranslateClientFake());
+        static::swap($fake = new FakeClient());
 
         return $fake;
     }
@@ -39,7 +39,7 @@ class Translator extends Facade
     protected static function getFacadeAccessor()
     {
         if (config('v-translator.enable_language_detection') == false) {
-            return TranslateClientFake::class;
+            return FakeClient::class;
         }
 
         return TranslateClient::class;

@@ -29,9 +29,9 @@ Now run the follwing command to add this package to your project.
 ### Configurations
 1.  **Enable APIs** - [Enable the Translate API](https://console.cloud.google.com/flows/enableapi?apiid=translate)
     and create a new project or select an existing project.
-2.  **Download The Credentials** - Configure your project using [Application Default Credentials][adc].
-    Click "Go to credentials" after enabling the APIs. Click "Create Credentials"
-    and select "Service Account Credentials" and download the credentials file. Then set the path to
+2.  **Download The Credentials** - Configure your project using [Application Default Credentials](https://console.cloud.google.com/apis/credentials).
+    Click **Go to credentials** after enabling the APIs. Click **Create Credentials**
+    and select **Service Account Credentials** and download the credentials file. Then set the path of
     this file to the environment variable `GOOGLE_APPLICATION_CREDENTIALS` using one of the following two ways:
 
 - Set environment variable to `.env` file in your project
@@ -47,7 +47,7 @@ Now run the follwing command to add this package to your project.
 
 - Detect languages
 ```
-    $client = new \Virtunus\Translator\TranslateClient();
+    $client = new \Virtunus\Translator\TranslationClient();
     $langs = $client->detectLanguages('May Allah bless you', 'project-id');
 ```
 > If you do not want to pass the `project-id` again and again then you should set the `GOOGLE_PROJECT_ID` environment varable in `.env` file of your project.
@@ -55,15 +55,13 @@ Now run the follwing command to add this package to your project.
 - Get original google client
 
 ```
-    $virtunusClient = new \Virtunus\Translator\TranslateClient();
+    $client = new \Virtunus\Translator\TranslationClient();
     $googleClent = $client->getClient();
 ````
 
 Now can call any function of the [google API](https://cloud.google.com/translate/docs/samples) client with `$googleClient`.
 
 ### Running Tests
-
-Set the value of environment variables `GOOGLE_APPLICATION_CREDENTIALS` and `GOOGLE_PROJECT_ID` in `phpunit.xml` file of the package. Then run the test command
 
 ```
     composer test
