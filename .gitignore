@@ -5,4 +5,6 @@ tests/temp
 .idea
 .phpunit.result.cache
 .php_cs.cache
-/.vscode
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore

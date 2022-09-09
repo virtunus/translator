@@ -3,8 +3,8 @@
 namespace Virtunus\Translator\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Virtunus\Translator\TranslateClient;
 use Virtunus\Translator\FakeClient;
+use Virtunus\Translator\TranslationClient;
 
 /**
  * @method static void assertDetectedLanguage(string $lang)
@@ -42,6 +42,6 @@ class Translator extends Facade
             return FakeClient::class;
         }
 
-        return TranslateClient::class;
+        return TranslationClient::class;
     }
 }
